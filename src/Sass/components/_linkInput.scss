@@ -1,0 +1,79 @@
+@use '../variables';
+@use '../mixins';
+
+.container {
+  width: 100%;
+  padding: 1.3em;
+  border-radius: 10px;
+  background-color: variables.$DarkViolet;
+  background-image: url('../images/bg-shorten-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9em;
+
+
+  @media only screen and (min-width: 996px) {
+    background-image: url('../images/bg-shorten-desktop.svg');
+    background-position: 50% 50%;
+  }
+
+  &__input {
+    width: 100%;
+
+    input {
+      width: 100%;
+      padding: 0.85em;
+      border-radius: 5px;
+      border: 2px solid transparent;
+      font-size: 0.9em;
+      outline: none;
+    }
+
+    &__invalid {
+      outline: 2px solid variables.$Red;
+      &::placeholder {
+        color: variables.$Red;
+        opacity: 0.7;
+      }
+    }
+
+    small {
+      color: variables.$Red;
+      font-size: 0.75em;
+      font-style: italic;
+      font-weight: 700;
+    }
+
+  }
+
+  button {
+    @include mixins.PrimaryButton(100%, 0.9em, 5px)
+  }
+}
+
+@media only screen and (min-width: 996px) {
+  .container {
+    flex-direction: row;
+    padding: 2.4em;
+
+    &__input {
+      width: 78%;
+      position: relative;
+
+      small {
+        position: absolute;
+        bottom: -25px;
+        left: 0px;
+      }
+    }
+
+    button {
+      @include mixins.PrimaryButton(20%, 0.9em, 5px)
+    }
+  }
+}

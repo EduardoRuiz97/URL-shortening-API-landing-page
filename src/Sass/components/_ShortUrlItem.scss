@@ -1,0 +1,78 @@
+@use '../mixins';
+@use '../variables';
+
+.url {
+  width: 100%;
+  padding: 1.3em 1.6em;
+  background-color: white;
+  border-radius:  10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1em;
+
+  &__original {
+    width: 100%;
+    color: variables.$VeryDarkViolet;
+    font-size: 0.8em;
+    word-wrap: break-word;
+  }
+
+  &__short {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      color: variables.$Cyan;
+      font-weight: 700;
+    }
+
+    button {
+      @include mixins.PrimaryButton (80px, 0.85em, 10px) ;
+
+      &:visited {
+        background-color: variables.$DarkViolet;
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+
+
+
+  @media only screen and (min-width: 996px) {
+
+    flex-direction: row;
+    align-items: center;
+
+    &__original {
+      width: 60%;
+      font-size: 0.9em;
+    }
+
+    &__short {
+      width: 40%;
+
+
+      button {
+        @include mixins.PrimaryButton (100px, 0.85em, 10px) 
+      }
+    }
+
+
+  }
+
+
+  @media only screen and (min-width: 1400px) {
+    &__short {
+      width: 30%;
+    }
+  }
+}
+

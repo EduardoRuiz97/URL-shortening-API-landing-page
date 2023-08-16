@@ -1,0 +1,95 @@
+@use './variables';
+
+@mixin container () {
+  width: 88%;
+  padding: 2em 0;
+  margin: auto;
+
+
+  @media only screen and (min-width: 777px) {
+    width: 85%;
+  }
+
+  @media only screen and (min-width: 996px) {
+    width: 82%;
+    padding: 3em 0%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    width: 75%;
+  }
+}
+
+
+@mixin PrimaryButton ($width, $fontSize, $borderRadius) {
+  width: $width;
+  border-radius: $borderRadius;
+  background-color: variables.$Cyan;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: $fontSize;
+  padding: 0.85em;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+
+@mixin Titles () {
+  font-size: 1.6em;
+  color: variables.$VeryDarkBlue;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @media only screen and (min-width: 996px) {
+    font-size: 2.2em;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 2.7em;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 3em;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 3.3em;
+  }
+
+}
+
+@mixin Paragraphs () {
+  font-size: 0.85em;
+  line-height: 1.7;
+  color: variables.$GrayishViolet;
+  font-weight: 500;
+
+  @media only screen and (min-width: 996px) {
+    font-size: 1em
+  }
+}
+
+@mixin Subtitlesh2 () {
+  font-size: 1.2em;
+  color: variables.$VeryDarkBlue;
+  line-height: 1.3;
+  font-weight: 700;
+
+  @media only screen and (min-width: 996px) {
+    font-size: 1.6em
+  }
+
+}
+
+@mixin Subtitlesh3 () {
+  font-size: 1.1em;
+  color: variables.$VeryDarkBlue;
+  line-height: 1.3;
+  font-weight: 700;
+}

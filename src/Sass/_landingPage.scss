@@ -1,0 +1,452 @@
+@use './mixins';
+@use './variables';
+
+.introduction {
+  @include mixins.container();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.5em;
+  margin-bottom: 20%;
+
+  &__illustration {
+    width: 100%;
+    height: 330px;
+    position: relative;
+
+
+    img {
+      position: absolute;
+      width: 410px;
+      height: 330px;
+      top: 0;
+      right: -25%;
+    }
+
+    @media only screen and (min-width: 600px) {
+      height: 400px;
+
+      img {
+        width: 470px;
+        height: 400px;
+        right: -10%;
+      }
+    }
+
+    @media only screen and (min-width: 777px) {
+      height: 430px;
+
+      img {
+        width: 520px;
+        height: 450px;
+        right: 0%;
+      }
+    }
+
+    @media only screen and (min-width: 996px) {
+
+      height: 380px;
+
+      img {
+        width: 470px;
+        height: 400px;
+        right: -30%;
+        top: -10%;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+
+      img {
+        width: 550px;
+        height: 400px;
+        right: -20%;
+        top: -10%;
+      }
+    }
+
+    @media only screen and (min-width: 1400px) {
+
+      img {
+        width: 600px;
+        height: 430px;
+        right: -30%;
+        top: -10%;
+      }
+    }
+
+    @media only screen and (min-width: 1600px) {
+
+      img {
+        width: 715px;
+        height: 470px;
+        right: -5%;
+        top: -10%;
+      }
+    }
+
+  }
+
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+
+    h1 {
+      @include mixins.Titles();
+    }
+
+    p {
+      @include mixins.Paragraphs()
+    }
+
+    button {
+      @include mixins.PrimaryButton(230px, 1em, 35px)
+    }
+  }
+}
+
+/*-------------shortener section----------------*/
+
+.shortened-links {
+  background-color: variables.$GrayishVioletBackground;
+  position: relative;
+
+  &__container {
+    @include mixins.container();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1em;
+    }
+  }
+}
+
+
+/*-------------information ----------------------*/
+
+.information {
+  background-color: variables.$GrayishVioletBackground;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__text {
+    @include mixins.container();
+    text-align: center;
+    z-index: 1000;
+
+    h2 {
+      @include mixins.Subtitlesh2 ();
+      margin-bottom: 10px; 
+    }
+
+    p {
+      @include mixins.Paragraphs();
+
+      @media only screen and (min-width: 1200px) {
+        width: 50%;
+        margin: auto;
+      }
+    }
+  }
+
+
+  &__graphs {
+    width: 100%;
+    @include mixins.container();
+
+    &__list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4em;
+
+
+      &__item {
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        position: relative;
+        padding: 70px 2em 2.3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1em;
+        text-align: center;
+        z-index: 1000;
+
+        div {
+          width: 88px;
+          height: 88px;
+          background-color: variables.$DarkViolet;
+          border-radius: 50%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: -15%
+        }
+
+        h3 {
+          @include mixins.Subtitlesh3();
+        }
+
+        p {
+          @include mixins.Paragraphs();
+        }
+      }
+
+
+      @media only screen and (min-width:996px) {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4em;
+
+        &__item {
+          width: 330px;
+          height: 345px;
+        }
+      }
+
+      @media only screen and (min-width:1400px) {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: unset;
+        gap: unset;
+        min-height: 420px;
+
+        &__item:first-child {
+          align-self: flex-start;
+        }
+
+        &__item:last-child {
+          align-self: flex-end;
+        }
+
+        div {
+          left: 10%;
+        }
+      }
+
+    }
+  }
+
+  &__line {
+    display: block;
+    position: absolute;
+    border: 3px solid variables.$Cyan;
+    width:700px;
+    transform: rotate(90deg);
+    z-index: 1;
+    top: 50%;
+
+    @media only screen and (min-width: 600px) {
+      width: 600px;
+    }
+
+    @media only screen and (min-width: 996px) {
+      transform: rotate(0deg);
+      width: 50%;
+      top: 40%;
+    }
+
+    @media only screen and (min-width: 1400px) {
+      top: 60%;
+    }
+  }
+}
+
+/*---------------started------------------------*/
+
+.started {
+  padding: 5.7em 2em 4.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  background-color: variables.$DarkViolet;
+  background-image: url('../images/bg-boost-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  @media only screen and (min-width: 996px) {
+    background-image: url('../images/bg-boost-desktop.svg');
+  }
+
+  span {
+    color: white;
+    font-weight: 700;
+    font-size: 1.25em;
+
+    @media only screen and (min-width: 1200px) {
+      font-size: 1.75em;
+    }
+  }
+
+  button {
+    @include mixins.PrimaryButton (200px, 1em, 30px) ;
+  }
+}
+
+
+/*-------------footer-------------------------*/
+
+footer {
+  background-color: variables.$VeryDarkViolet;
+
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+    @include mixins.container();
+  
+    &__logo {
+      width: 121px;
+      height: 33px;
+    }
+
+    &__navbar {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        gap: 2.5em;
+        font-size: 0.85em;
+
+        &__option {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          gap: 1.6em;
+          font-weight: 700;
+          color: white;
+
+          &__list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.2em;
+            font-weight: 500;
+            color: variables.$GrayishViolet;
+
+            li {
+              &:hover {
+                color: variables.$Cyan;
+              }
+            }
+          }
+
+          
+        }
+      }
+    }
+
+
+    &__sotial-media {
+      &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25em;
+      }
+    }
+
+    @media only screen and (min-width: 996px) {
+      flex-direction: row;
+      align-items: flex-start;
+
+      &__navbar {
+        &__list {
+          flex-direction: row;
+          align-items: flex-start;
+          text-align: left;
+          gap: 3em;
+
+          &__option {
+            align-items: flex-start;
+
+            &__list {
+              align-items: flex-start;
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+
+      &__navbar {
+        width: 40%;
+      }
+  
+    }
+  }
+  }
+
+
+.icon {
+  color: white;
+  width: 30px;
+  height: 30px;
+
+  &:hover {
+    color: variables.$Cyan;
+  }
+}
+
+
+
+
+
+
+/*---------------Media queries-------------------*/
+
+@media only screen and (min-width: 996px) {
+
+  .introduction {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 7%;
+
+
+    &__text {
+      text-align: left;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1.5em;
+    }
+  }
+}

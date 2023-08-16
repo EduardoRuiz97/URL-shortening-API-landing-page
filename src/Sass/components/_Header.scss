@@ -1,0 +1,24 @@
+@use '../mixins';
+@use '../variables';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @include mixins.container();
+
+  &__icon-button {
+    &__icon {
+      width: 20px;
+      height: 20px;
+      color: variables.$GrayishViolet;
+
+      @media only screen and (min-width: 996px) {
+        display: none;
+      }
+    }
+  }
+}

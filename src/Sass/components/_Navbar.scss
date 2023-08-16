@@ -1,0 +1,102 @@
+@use '../variables';
+@use '../mixins';
+
+.navbar {
+  background-color: variables.$DarkViolet;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  padding: 2.5em 1.4em;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  z-index: 100000;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    color: white;
+  }
+
+  hr {
+    width: 100%;
+    font-weight: 300;
+    color: variables.$Gray;
+    opacity: 0.1;
+  }
+
+  span {
+    color: white;
+  }
+
+  button {
+    @include mixins.PrimaryButton(100%, 0.85em, 25px)
+  }
+}
+
+.navbar__open {
+  display: flex;
+}
+
+@media only screen and (min-width: 996px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: unset;
+    background-color: unset;
+    width: 80%;
+    position: unset;
+    padding: unset;
+    border-radius: unset;
+
+    ul {
+      flex-direction: row;
+      color: variables.$GrayishViolet;
+      font-weight: 700;
+      font-size: 0.85em;
+
+      li {
+        &:hover {
+          color: variables.$VeryDarkBlue;
+        }
+      }
+    }
+
+    span {
+      color: variables.$GrayishViolet;
+      font-weight: 700;
+      font-size: 0.85em;
+      margin-right: 10px;
+      &:hover {
+        color: variables.$VeryDarkBlue;
+      }
+    }
+
+    hr {
+      width: 30%;
+      color: unset;
+      opacity: 0;
+    }
+
+    button {
+      @include mixins.PrimaryButton(100px, 0.85em, 35px)
+    }
+  }
+
+
+}
+
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1600px) {}
