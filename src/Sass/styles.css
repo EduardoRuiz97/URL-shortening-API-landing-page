@@ -203,7 +203,7 @@ ul {
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1em;
 }
@@ -853,6 +853,11 @@ footer .footer__sotial-media__list {
   font-size: 0.8em;
   word-wrap: break-word;
 }
+@media screen and (min-width: 996px) {
+  .url__original {
+    font-size: 1em;
+  }
+}
 .url__short {
   width: 100%;
   display: flex;
@@ -863,6 +868,12 @@ footer .footer__sotial-media__list {
 .url__short span {
   color: hsl(180deg, 66%, 49%);
   font-weight: 700;
+  font-size: 0.8em;
+}
+@media screen and (min-width: 1200px) {
+  .url__short span {
+    font-size: 1em;
+  }
 }
 .url__short button {
   width: 80px;

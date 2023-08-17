@@ -117,11 +117,12 @@
   background-color: variables.$GrayishVioletBackground;
   position: relative;
 
+
   &__container {
     @include mixins.container();
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 1em;
 

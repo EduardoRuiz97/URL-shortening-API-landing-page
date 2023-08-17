@@ -17,6 +17,9 @@
     color: variables.$VeryDarkViolet;
     font-size: 0.8em;
     word-wrap: break-word;
+    @media screen and (min-width:996px) {
+      font-size: 1em;
+    }
   }
 
   &__short {
@@ -29,6 +32,11 @@
     span {
       color: variables.$Cyan;
       font-weight: 700;
+      font-size: 0.8em;
+
+      @media screen and (min-width:1200px) {
+        font-size: 1em;
+      }
     }
 
     button {
